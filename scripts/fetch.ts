@@ -1,7 +1,7 @@
 #!/usr/bin/env -S deno run --allow-read --allow-write --allow-net
 
-import { load } from "https://deno.land/std@0.214.0/dotenv/mod.ts"
-import { z } from "https://deno.land/x/zod@v3.21.4/mod.ts"
+import { load } from "jsr:@std/dotenv@0.225.2"
+import { z } from "npm:zod@3.23.8"
 
 const EnvSchema = z.object({
   NETATMO_DEVICE_ID: z.string().min(1),

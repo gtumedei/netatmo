@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run --allow-read --allow-write
 
-import { format } from "https://deno.land/std@0.160.0/datetime/mod.ts"
+import { format } from "jsr:@std/datetime@0.225.2"
 
 type Data = {
   body: Record<string, number[]>
