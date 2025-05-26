@@ -33,6 +33,6 @@ for (const timestamp of timestamps) {
   csvContent += `${formattedDate},${temperature},${humidity},${CO2},${noise},${pressure}\n`
 }
 
-Deno.writeTextFile("./data/data.csv", csvContent)
+await Deno.writeTextFile("./data/data.csv", csvContent)
 
 console.log("Done")

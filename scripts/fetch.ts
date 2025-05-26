@@ -30,7 +30,11 @@ for (const parameter of PARAMETERS) {
   const res = await fetch(`${NETATMO_API_ENDPOINT}?${searchParams.toString()}`, { headers })
   const data = await res.json()
 
-  await Deno.writeTextFile(`./data/${parameter}.json`, JSON.stringify(data, null, 2))
+  if (res.ok) {
+    await Deno.writeTextFile(`./data/${parameter}.json`, JSON.stringify(data, null, 2))
+  } else {
+    console.error(data)
+  }
 }
 
 console.log("Done")
